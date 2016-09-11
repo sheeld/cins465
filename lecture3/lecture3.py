@@ -35,8 +35,8 @@ listofNums = [1,2,"string",5,6,7] #list
 
 print (listofNums)
 
-for value in listofNums:
-        print(value, end=" ")
+# for value in listofNums:
+#         print(value, end=" ")ls
         
 for i in range(len(listofNums)):
     print(listofNums[i])
