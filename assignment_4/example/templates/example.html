@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %} {{ page_name }} {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="large-12 columns">
+      <h1 align="center">Welcome to Sheel's CINS 465 Foundations Demo</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 medium-8 columns">
+      <h5>Here&rsquo;s your basic grid:</h5>
+      <!-- Grid Example -->
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="primary callout">
+            <p>12 columns</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 medium-6 columns">
+          <div class="primary callout">
+            <p>Six columns</p>
+          </div>
+        </div>
+        <div class="large-6 medium-6 columns">
+          <div class="primary callout">
+            <p>Six columns</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-4 medium-4 small-4 columns">
+          <div class="primary callout">
+            <p>Four columns</p>
+          </div>
+        </div>
+        <div class="large-4 medium-4 small-4 columns">
+          <div class="primary callout">
+            <p>Four columns</p>
+          </div>
+        </div>
+        <div class="large-4 medium-4 small-4 columns">
+          <div class="primary callout">
+            <p>Four columns</p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+  <div class="large-6 medium-6 columns">
+      <h3>Kitty Name Suggestions</h3>
+      <form action="" method="post">
+        <div class="row">
+            {% csrf_token %}
+            <div class="large-4 columns">
+              {{ form.submission.errors }}
+              {{ form.submission }}
+            </div>
+            <div class="large-8 columns">
+              <p><input  type="submit" value="Submit Suggestion"/></p>
+            </div>
+        </div>
+      </form>
+  </div>
+  <div class="large-6 medium-6 columns">
+    <h3>Suggestions</h3>
+    <ul style="margin-left: 0.5in;">
+      {% for item in submissions %}
+      <li> {{ item }} </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+    </div>
+
+    <div class="large-4 medium-4 columns">
+      <img src="../static/img/kittu.jpg"></img>
+      <h5>Documentation links:</h5>
+      <div class="row">
+          <div class="medium-push-1">
+            <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a></p>
+          </div>
+          <div class="medium-push-1">
+            <p><a href="http://zurb.com/university/code-skills">Foundation Code Skills</a></p>
+          </div>
+          <div class="medium-push-1">
+            <p><a href="http://foundation.zurb.com/forum">Foundation Forum</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="medium-push-1">
+            <p><a href="http://github.com/zurb/foundation">Foundation on Github</a></p>
+          </div>
+          <div class="medium-push-1">
+            <p><a href="https://twitter.com/ZURBfoundation">@zurbfoundation</a></p>
+          </div>
+        </div>
+      <p>
+      <!--  <a href="#" class="button">Simple Button</a><br/>-->
+      <!--<a href="#" class="success button">Success Btn</a><br/>-->
+      <!--<a href="#" class="alert button">Alert Btn</a><br/>-->
+      <!--<a href="#" class="secondary button">Secondary Btn</a></p>-->
+      <div class="callout">
+        <h5>Personal links!</h5>
+        <p>These are my links nomsayn.</p>
+        <a href="http://sunscriptmusic.com" class="small button">SunScriptMusic.com</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
