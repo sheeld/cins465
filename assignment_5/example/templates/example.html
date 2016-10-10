@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} {{ page_name }} {% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="large-12 columns">
+      <h1 align="center">Welcome to Sheel's CINS 465 Assignment 5</h1>
+    </div>
+  </div>
+  
+<div class="row">
+  <div class="large-6 medium-6 columns">
+      <h3>Kitty Name Suggestions</h3>
+      <form action="" method="post">
+        <div class="row">
+            {% csrf_token %}
+            <div class="large-4 columns">
+              {{ form.submission.errors }}
+              {{ form.submission }}
+            </div>
+            <div class="large-8 columns">
+              <p><input  type="submit" value="Submit Suggestion"/></p>
+            </div>
+        </div>
+      </form>
+  </div>
+  <div class="large-2 medium-2 columns">
+    <h3>Suggestions</h3>
+    <div id="suggested">
+      <ul style="margin-left: 0.5in;">
+        {% for item in submissions %}
+        <li> {{ item }} </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+      <div class="large-4 medium-4 columns">
+      <img src="../static/img/kittu.jpg"></img>
+  
+      <div class="callout">
+        <h5>Personal links!</h5>
+        <p>These are my links nomsayn.</p>
+        <a href="http://sunscriptmusic.com" class="small button">SunScriptMusic.com</a>
+      </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+<script src="{% static "js/vendor/react.js" %}"></script>
+<script src="{% static "js/vendor/react-dom.js" %}"></script>
+<script type="text/babel" src="{% static "js/helloworld.js" %}"></script>
+
+{% endblock %}
